@@ -1,0 +1,52 @@
+---
+import "../styles/global.css";
+---
+
+<div class="w-full max-w-2xl mx-auto">
+  <h1 class="text-4xl font-display mb-6 text-center text-white">¿Cómo te puedo ayudar hoy?</h1>
+  <div
+    id="chat-container"
+    class="bg-white/20 backdrop-blur-sm h-100 p-4  overflow-y-auto rounded-lg shadow-lg custom-scrollbar"
+  ></div>
+  <div id="input-container" class="mt-3 flex">
+    <input
+      type="text"
+      id="user-input"
+      placeholder="Escribe tu mensaje..."
+      class="flex-1 p-3  font-sans bg-white/30 border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-300"
+    />
+    <button
+      id="send-button"
+      class="bg-purple-600 text-white p-3 rounded-r-lg hover:bg-purple-700 transition-colors"
+    >Enviar</button>
+  </div>
+
+  <button
+    id="api-key-button"
+    class="mt-3 w-full md:w-auto md:fixed  md:bottom-4 md:left-4 bg-gray-800 text-white p-2 rounded-lg hover:bg-gray-700 transition-colors z-10"
+  >
+    Configurar API Key
+  </button>
+
+  <div
+    id="api-key-input-container"
+    class="hidden mt-2 w-full md:w-auto md:fixed md:bottom-4 md:left-4 mb-14 flex-col space-y-2 z-20"
+  >
+    <input
+      type="text"
+      id="api-key-input"
+      placeholder="Ingresa tu API Key de Gemini..."
+      class="w-full p-2 bg-white/30 border-none rounded-lg  focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-300"
+    />
+    <button
+      id="save-api-key"
+      class="w-full bg-purple-600 text-white p-2 rounded-lg hover:bg-purple-700 transition-colors"
+    >
+      Guardar
+    </button>
+  </div>
+</div>
+
+<script>
+  import "../scripts/chat.js";
+</script>
