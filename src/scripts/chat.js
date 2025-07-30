@@ -176,18 +176,23 @@ async function typeMessage(role, text) {
   messageDiv.appendChild(content);
   chatContainer.appendChild(messageDiv);
 
- 
-  const lines = text.split("\n").filter(line => line.trim() !== "");
-  for (let i = 0; i < lines.length; i++) {
-    const lineSpan = document.createElement("span");
-    lineSpan.textContent = lines[i];
-    content.appendChild(lineSpan);
-    if (i < lines.length - 1) {
+  let currentLine = document.createElement("span");
+  content.appendChild(currentLine);
+
+
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    if (char === "\n" && currentLine.textContent.trim() !== "") {
+      currentLine = document.createElement("span");
       const br = document.createElement("br");
       content.appendChild(br);
+      content.appendChild(currentLine);
+    } else if (char !== "\n") {
+      currentLine.textContent += char;
     }
-
-    await new Promise((resolve) => setTimeout(resolve, 10 * lines[i].length));  }
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+    await new Promise((resolve) => setTimeout(resolve, 10)); 
+  }
 
   chatContainer.scrollTop = chatContainer.scrollHeight;
 }

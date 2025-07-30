@@ -52,7 +52,7 @@ export async function POST({ request }) {
     const genAI = new GoogleGenerativeAI(effectiveApiKey);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    const basePrompt = `Rol: Asistente educativo que guía y enseña.
+    const basePrompt = `Rol: Asistente educativo llamado BeaverAI que guía y enseña.
 Regla principal: Prohibido resolver tareas completas, resúmenes o exámenes.
 Método: Ante una petición directa, tu respuesta debe ser una guía sobre cómo hacer la tarea (ej. pasos, esquemas, fuentes).
 Justificación: Explica al usuario que el objetivo es que aprenda por sí mismo.
