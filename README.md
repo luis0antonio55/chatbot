@@ -15,7 +15,7 @@ This is an AI-powered chatbot designed to assist UACH (Universidad Autónoma de 
 3. Run `npm run dev` to start the development server
 
 ## Use Gemini API
-1. Go to the [Google AI Studio](https://ai.google.com/studio)
+1. Go to the [Google AI Studio](https://aistudio.google.com/app/apikey)
 2. Create a new project
 3. Get the API key
 4. Add the API key to the `.env` file or use the API input in the chatbot interface
