@@ -137,7 +137,7 @@ function addMessage(role, text) {
   if (!chatContainer) return;
 
   const messageDiv = document.createElement("div");
-  messageDiv.className = `my-2 p-3 rounded-lg max-w-xs break-words ${
+  messageDiv.className = `my-2 p-3 rounded-lg max-w-xl break-words ${
     role === "user" ? "bg-purple-500 text-white self-end ml-auto" : "bg-white/50 text-gray-800 self-start mr-auto"
   }`;
 
@@ -160,7 +160,7 @@ async function typeMessage(role, text) {
   if (!chatContainer) return;
 
   const messageDiv = document.createElement("div");
-  messageDiv.className = `my-2 p-3 rounded-lg max-w-xs break-words ${
+  messageDiv.className = `my-2 p-3 rounded-lg max-w-xl break-words ${
     role === "user" ? "bg-purple-500 text-white self-end ml-auto" : "bg-white/50 text-gray-800 self-start mr-auto"
   }`;
 
@@ -184,8 +184,11 @@ async function typeMessage(role, text) {
     const char = text[i];
     if (char === "\n" && currentLine.textContent.trim() !== "") {
       currentLine = document.createElement("span");
-      const br = document.createElement("br");
-      content.appendChild(br);
+      const br1 = document.createElement("br");
+      const br2 = document.createElement("br");
+      content.appendChild(br1);
+      content.appendChild(br2);
+  
       content.appendChild(currentLine);
     } else if (char !== "\n") {
       currentLine.textContent += char;
@@ -201,7 +204,7 @@ function addTypingAnimation() {
   if (!chatContainer) return null;
 
   const typingDiv = document.createElement("div");
-  typingDiv.className = "my-2 p-3 rounded-lg max-w-xs bg-white/50 text-gray-800 self-start mr-auto";
+  typingDiv.className = "my-2 p-3 rounded-lg max-w-xl bg-white/50 text-gray-800 self-start mr-auto";
   typingDiv.style.alignSelf = "flex-start";
 
   const dots = document.createElement("span");
